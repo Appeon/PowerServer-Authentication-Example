@@ -23,7 +23,7 @@ The project is structured as follows.
 
 #### Preparations
 
-Prerequisite: Register a test project in Amazon Cognito, Azure AD, or Azure B2C based on your preference. Note that the routing of the callback address based on the authorization_code mode must be consistent with that configured on the third-party authorization platform, for example, the callback address of AWS is https://localhost:4000/aws/callback.
+Prerequisite: Register a test project in Amazon Cognito, Azure AD, or Azure B2C based on your preference. Note that the routing of the callback address based on the authorization_code mode must be consistent with that configured on the third-party authorization platform, for example, the callback address of AWS is `https://localhost:4000/aws/callback`.
 
 Download this demo application, and then:
 
