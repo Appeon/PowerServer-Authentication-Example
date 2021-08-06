@@ -59,7 +59,7 @@ Download this demo application, and then:
 
 9. Switch to PowerBuilder 2021, right click on **ps_authentication**, and then click Run PowerServer project.
 
-#### How to integrate to your ServerAPIs
+#### How to integrate to your ServerAPIs project
 
 1. Add references to **ServerAPIs.Authentication.Common** and the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs. For example, suppose you need to use Aamaon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
 
