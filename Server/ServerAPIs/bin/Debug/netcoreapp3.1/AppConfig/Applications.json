@@ -1,0 +1,36 @@
+{
+  "Applications": {
+    "AuthenticationDemo": {
+      "CloudTransactions": {
+        "sqlca": {
+          "CacheName": "address"
+        }
+      },
+      "Transaction": {
+        "Timeout": 0,
+        "ThrowExceptionIfInvalid": true
+      },
+      "Session": {
+        "Timeout": 3600
+      },
+      "Request": {
+        "Timeout": 3600
+      },
+      "RunMode": 0
+    }
+  },
+  "Connections": {
+    "Default": {
+      "address": {
+        "ConnectionType": "Odbc",
+        "OdbcName": "PB Demo DB V2021",
+        "OdbcDriver": "SqlAnywhere",
+        "UserID": "",
+        "Password": "",
+        "CommandTimeout": 30,
+        "OtherOptions": "",
+        "DynamicConnection": false
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+﻿<Project>
+  <PropertyGroup>
+
+    <!-- Filters warnings -->
+    <NoWarn>1701;1702;1591</NoWarn>
+
+    <!-- Sets the directory for the Swagger.xml -->
+    <DocumentationFile>OpenAPI\Swagger.xml</DocumentationFile>
+
+    <!-- Configures whether to create Swagger.xml -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Installs Swashbuckle.AspNetCore for API debugging functions -->
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Configures whether to always copy the Swagger.xml to the output directory -->
+    <None Update="OpenAPI\Swagger.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

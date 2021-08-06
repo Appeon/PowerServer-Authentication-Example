@@ -1,0 +1,437 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="./lib/icono.min.css">
+  <script src="./lib/vue.min.js"></script>
+  <script src="./lib/axios.min.js"></script>
+  <style>
+    table, td, th {
+      margin-top: 8px;
+      line-height: 30px;
+      font-size: 14px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    th {
+      height: 46px;
+      font-size: 16px;
+      background-color: #f8fff9;
+    }
+
+    td, ul {
+      margin: 3px;
+      color: #757575;
+    }
+
+    .configcontent {
+      width: 80%;
+      margin: 10px 10%;
+    }
+
+    .configth {
+      background-color: #f6fff6;
+      color: #5f5f5f;
+    }
+
+    .oconfigth {
+      background-color: #f6fff6;
+      color: #5f5f5f;
+    }
+
+    .configtr {
+      background-color: #ffffff;
+    }
+
+    .evenconfigtr {
+      border-bottom: 1px solid #f5f5f5;
+      background-color: #fff;
+    }
+
+    .configcen {
+      text-align: center;
+      border-right: 1px solid #f5f5f5;
+    }
+
+    .tdconfig {
+      border-right: 1px solid #f5f5f5;
+    }
+
+    .lidict li {
+      color: #009284;
+    }
+
+    .oldict li {
+      color: #737373;
+    }
+
+    .lidict span {
+      color: #757575;
+    }
+
+    .triangleright {
+      width: 0;
+      height: 0;
+      border-bottom: 10px solid #607d8b;
+      border-left: 10px solid transparent;
+      bottom: 10px;
+      position: relative;
+    }
+
+    .triangleleft {
+      width: 0;
+      height: 0;
+      border-top: 10px solid #ebe0ff;
+      border-right: 10px solid transparent;
+      position: absolute;
+    }
+
+    .webcards {
+      background-color: rgb(255 255 255);
+      margin-top: 30px;
+      border-radius: 3px;
+      box-shadow: 0 0px 10px #f3f0f0;
+    }
+
+    /* Mobile */
+    .mobilecard {
+      border: 1px solid #e6e6e6;
+      padding: 13px;
+      border-radius: 5px;
+      margin: 15px 6px;
+      box-shadow: 0 5px 10px #f3f0f0;
+    }
+
+      .mobilecard th {
+        font-size: 13px;
+      }
+
+    .mconfigth {
+      width: 24%;
+      background-color: #4e6f8c;
+      color: white;
+    }
+
+    .moconfigth {
+      width: 24%;
+      background-color: #6db1ab;
+      color: white;
+    }
+
+    .mconfigtd {
+      width: 70%;
+      position: relative;
+      left: 5px;
+    }
+
+    .mconfigtr {
+      border-bottom: 1px solid #f5f5f5;
+      background-color: #ffffff;
+    }
+
+    .mevenconfigtr {
+      border-bottom: 1px solid #f5f5f5;
+      background-color: #fff;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 100%;
+      outline: 10px solid black;
+      outline-offset: -35px;
+      cursor: pointer;
+    }
+
+    .panel {
+      height: 100%;
+      overflow: hidden;
+      transition: height 0s;
+      padding: 1px 30px;
+    }
+
+    .loader {
+      background: rgba(189,195,199,1);
+      height: 10px;
+      width: 10px;
+      margin: 20px auto;
+      animation: loadit 4s linear infinite;
+    }
+
+    @keyframes loadit {
+      55% {
+        background: rgba(189,195,199,0.4);
+        border-radius: 100%;
+        transform: rotate(360deg);
+        box-shadow: 20px 0 0 rgba(189,195,199,0.3),-20px 0 0 rgba(189,195,199,0.3),10px 0 0 rgba(189,195,199,0.3),-10px 0 0 rgba(189,195,199,0.3),0 20px 0 rgba(189,195,199,0.3),0 -20px 0 rgba(189,195,199,0.3),0 20px 0 rgba(189,195,199,0.3),0 -20px 0 rgba(189,195,199,0.3);
+      }
+    }
+
+    .pause {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: rgba(189,195,199,0.4);
+      cursor: pointer;
+    }
+
+    .pauseit {
+      animation-play-state: paused;
+    }
+
+    .kanu {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      color: rgba(189,195,199,0.4);
+    }
+
+      .kanu a {
+        color: inherit;
+        text-decoration: none;
+      }
+  </style>
+</head>
+<body>
+  <div id="app" :style="{'width': isMobile ? '100%':'80%' ,'margin': isMobile ? '0'  :'10px 10%' }">
+    <div v-if="checkResult.length == 0" style="margin-top: 25%;">
+      <div class="loader"></div>
+    </div>
+    <!-- Web -->
+    <div v-if="isMobile == false && checkResult.length > 0" v-for="current in checkResult" :key="current.title" class="webcards">
+      <span class="triangleleft"></span>
+      <div>
+        <div style="cursor: pointer;display: flex;padding: 15px 30px;" @click="switchFold(current)">
+          <div style="transform: scale(0.6);">
+            <i v-if="current.fold == true" class="icono-caretDownSquare" style="cursor: pointer; color: #797979;"></i>
+            <i v-if="current.fold == false" class="icono-caretUpSquare" style="cursor: pointer; color: #797979;"></i>
+          </div>
+          <span style="font-size: 16px;margin-left: 13px;line-height: 30px;">
+            <b style=" font-size: 20px; color: #757575;  position: relative; top: 2px;">{{ current.title }} </b>
+          </span>
+          <div style="transform: scale(0.7);">
+            <i v-if="current.Result == true" class="icono-checkCircle" style="background-color: #37a63b; color: white"></i>
+            <i v-if="current.Result == false" class="icono-exclamationCircle" style=" background-color: #f44336b0; color: white"></i>
+          </div>
+        </div>
+        <div class="panel" :style="{'height': current.fold ? '0px':'100%' }">
+          <table>
+            <tr>
+              <th class="configth" style="width: 20%;">Check Item</th>
+              <th class="configth" style="width: 5%;">Result</th>
+              <th class="oconfigth" style="width: 35%;">Actual</th>
+              <th class="oconfigth" style="width: 30%;">Suggestion</th>
+            </tr>
+            <tr v-for="(element,inxtr ) in current.data" :key="element.checkItem" class="configtr" :style="{'border-bottom': inxtr == current.data.length - 1  ? '':'1px solid #f5f5f5' }">
+              <td class="tdconfig">
+                <ul class="lidict">
+                  <li>
+                    <span style="font-weight: 600; color: #757575;">
+                      {{ element.checkItem }}
+                    </span>
+                  </li>
+                </ul>
+              </td>
+
+              <td class="tdconfig">
+                <div style="transform: scale(0.7); text-align: center;">
+                  <i v-if="element.Result == false" class="icono-exclamationCircle" style="background-color: #f44336b0; color: white"></i>
+                  <i v-if="element.Result" class="icono-checkCircle" style=" background-color: #37a63b; color: white"></i>
+                </div>
+              </td>
+
+              <td class="tdconfig">
+                <ol class="oldict">
+                  <li v-for="(acuItem,ainx) in element.Actual" :key="ainx">
+                    <span> {{ acuItem }}</span>
+                  </li>
+                </ol>
+              </td>
+              <td>
+                <dl style="margin-left: 10px; ">
+                  <dt v-for="(sugItem,index) in element.Suggestion" :key="sugItem">
+                    <span style="font-weight: 600;"> {{ index }}</span>
+                    <br />
+                    <ul class="lidict">
+                      <li v-for="item in sugItem" :key="item">
+                        <span> {{ item }}</span>
+                      </li>
+                    </ul>
+                  </dt>
+                </dl>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div v-if="isMobile && checkResult.length > 0">
+      <dl>
+        <dt v-for="current in checkResult" :key="current.title" class="mobilecard">
+          <div @click="switchFold(current)" style="display: flex;line-height: 33px;">
+            <div style="transform: scale(0.7);">
+              <i v-if="current.Result == true" class="icono-checkCircle" style="background-color: #37a63b; color: white"></i>
+              <i v-if="current.Result == false" class="icono-exclamationCircle" style=" background-color: #f44336b0; color: white"></i>
+            </div>
+            <span style="font-size: 16px;font-weight: 600; position: relative; top: 2px; ">
+              {{ current.title }}
+            </span>
+
+            <div style="right: 27px;position: absolute;transform: scale(0.7);">
+              <i v-if="current.fold == true" class="icono-caretDown" style="color: #797979; cursor: pointer;"></i>
+              <i v-if="current.fold == false" class="icono-caretUp" style=" color: #797979; cursor: pointer;"></i>
+            </div>
+          </div>
+          <div class="panel" :style="{'height': current.fold ? '0px':'100%' }">
+            <table v-for="(element,inxtr ) in current.data">
+              <tr class="mevenconfigtr" style="border-top: 1px solid #f5f5f5;  ">
+                <th class="mconfigth">Check Item</th>
+                <td style="width: 70%;text-align: left;left: 5px;position: relative;"> <span style="font-weight: 600; color: #757575;">  {{ element.checkItem }} </span></td>
+              </tr>
+
+              <tr class="mevenconfigtr">
+                <th class="moconfigth">Result</th>
+                <td :style="{'width':'70%'}" class="mconfigtd">
+                  <div style="transform: scale(0.7); text-align: center;">
+                    <i v-if="element.Result == false" class="icono-exclamationCircle" style="background-color: #f44336b0; color: white"></i>
+                    <i v-if="element.Result" class="icono-checkCircle" style="background-color: #37a63b; color: white"></i>
+                  </div>
+                </td>
+              </tr>
+
+              <tr class="mconfigtr">
+                <th class="mconfigth">Actual</th>
+                <td style="width: 70%;">
+                  <ol class="oldict">
+                    <li v-for="acuItem in element.Actual" :key="acuItem">
+                      <span>{{ acuItem }}</span>
+                    </li>
+                  </ol>
+                </td>
+              </tr>
+              <tr class="mevenconfigtr">
+                <th class="moconfigth">Suggestion</th>
+                <td style="width: 70%;">
+                  <dl style="margin-left: 5px; ">
+                    <dt v-for="(sugItem,index) in element.Suggestion" :key="sugItem">
+                      <span style="font-weight: 600;"> {{ index }}:</span>
+                      <br />
+                      <ul class="lidict">
+                        <li v-for="item in sugItem" :key="item">
+                          <span> {{ item }}</span>
+                        </li>
+                      </ul>
+                    </dt>
+                  </dl>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </dt>
+      </dl>
+    </div>
+    <div style=" height: 120px;">
+
+    </div>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+
+      data: {
+        isMobile: false,
+        checkResult: [],
+        checkResponse: {
+          "Failed to request the PowerServer self-check API": {
+            "Failed to request the PowerServer self-check API": {
+              "Actual": [],
+              "Suggestion": {},
+              "Result": false
+            }
+          }
+        }
+      },
+
+      created() {
+        this.browserClient();
+
+        this.queryCheckItem();
+      },
+
+      methods: {
+        switchFold(e) {
+          e.fold = !e.fold
+        },
+
+        queryCheckItem() {
+
+          let params = {
+            method: 'get',
+            url: '/health-details'
+          };
+
+          axios(params).then((res) => {
+            if (res.data) {
+              this.checkResponse = res.data;
+            }
+          }).catch((err) => {
+            console.log(err);
+
+          }).finally(() => {
+
+            for (let current in this.checkResponse) {
+
+              let vmItem = {
+                title: current,
+                Result: true,
+                fold: true,
+                data: []
+              };
+
+              let checkItem = this.checkResponse[current];
+
+              for (let element in checkItem) {
+
+                checkItem[element]['checkItem'] = element;
+
+                if (checkItem[element]['Result'] == false) {
+
+                  vmItem['Result'] = false;
+                }
+
+                vmItem.data.push(checkItem[element]);
+              }
+
+              this.checkResult.push(vmItem);
+            }
+          });
+        },
+
+        browserClient() {
+          var sUserAgent = navigator.userAgent.toLowerCase();
+          var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+          var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+          var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+          var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+          var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+          var bIsAndroid = sUserAgent.match(/android/i) == "android";
+          var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+          var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+          this.isMobile = bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM;
+        },
+      },
+    })
+  </script>
+</body>
+</html>

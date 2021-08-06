@@ -1,0 +1,44 @@
+﻿{
+  "Logging": {
+    // Sets whether to enable file server for logging
+    "EnableFileServer": true,
+
+    // Sets the default log output level of all the logging providers
+    "LogLevel": {
+
+      // Sets the default log output level
+      "Default": "Information",
+
+      // Sets the Microsoft log output level
+      "Microsoft": "Information",
+
+      // Sets the Microsoft.Hosting.Lifetime log output level 
+      "Microsoft.Hosting.Lifetime": "Information",
+
+      // Sets the System.Net.Http.HttpClient.PowerServer log output level 
+      "System.Net.Http.HttpClient.PowerServer": "Warning"
+    },
+
+    // Sets the output of the log in the console
+    "Console": {
+      "LogLevel": {
+        // Sets the PowerServer log output level
+        "PowerServer": "Debug"
+      }
+    }
+  },
+  "PowerServer": {
+    // Sets the PowerServer debug-related log options
+    "LoggingOptions": {
+
+      // Sets whether to output SQL related logs
+      "EnableSqlLog": true,
+
+      // Sets whether to output logs related with session status changes
+      "EnableSessionLog": true,
+
+      // Sets whether to output logs related with transaction status changes
+      "EnableTransactionLog": true
+    }
+  }
+}

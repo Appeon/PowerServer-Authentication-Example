@@ -1,0 +1,15 @@
+﻿2021-07-22 09:26:42,051 ERROR PowerServer. [0] - MESSAGE: Timestamp: 7/22/2021 9:26:42 AM
+Instance: T213-GAOCHENGFE(appeon)-5FA09
+
+Title: PowerServer failed to start. Invalid License code
+Message: The license code is invalid. Please get the latest license code from the website, add it in the ServerAPIs project and then redeploy the project
+
+LicenseCode: 
+
+PowerServer Version: 1.0.0-dev-041
+PowerServer BuiltOn: 2021-07-18
+
+ 2021-07-22 09:26:42,148  WARN PowerServer.MoveNext [0] - MESSAGE: Failed to send the notification email. To ensure that the notification email can reach the intended receiver(s), please fix the email settings in ServerConfig/Server.json. Error: This property cannot be set to an empty string. (Parameter 'value')
+ 2021-07-22 09:26:42,227  INFO System.Net.Http.HttpClient.PowerServer.LogicalHandler.? [?] - MESSAGE: Start processing HTTP request POST https://apips.appeon.com/api/v1/license/uploadvalidationmessage
+ 2021-07-22 09:26:42,232  INFO System.Net.Http.HttpClient.PowerServer.ClientHandler.? [?] - MESSAGE: Sending HTTP request POST https://apips.appeon.com/api/v1/license/uploadvalidationmessage
+ 

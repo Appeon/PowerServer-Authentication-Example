@@ -1,0 +1,37 @@
+﻿<log4net>
+
+  <!-- Configures the appender for logging -->
+  <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+
+    <!-- Sets the output directory of the log file -->
+    <!-- If using IIS, it is necessary to enable the write permission to the directory -->
+    <file value="Logging/logs/powerserver.log" />
+
+    <!-- Sets the encoding format of the log file -->
+    <Encoding value="utf-8" />
+
+    <!-- Sets whether to append to existing file -->
+    <appendToFile value="true" />
+
+    <!-- Sets the maximum file size. Creates a new file if exceeded -->
+    <maximumFileSize value="5MB" />
+
+    <!-- Sets the maximum number of the files. Removes older files if exceeded -->
+    <maxSizeRollBackups value="100" />
+
+    <!-- Sets the locking mode: do not log while writing to the file -->
+    <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
+
+    <!-- Sets the logging format -->
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%date %5level %logger.%method [%line] - MESSAGE: %message%newline %exception" />
+    </layout>
+
+  </appender>
+
+  <root>
+    <!-- Enables the logging configuration-->
+    <appender-ref ref="RollingFile" />
+  </root>
+
+</log4net>

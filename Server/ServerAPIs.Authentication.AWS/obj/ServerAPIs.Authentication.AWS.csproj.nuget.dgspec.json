@@ -1,0 +1,236 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.AWS\\ServerAPIs.Authentication.AWS.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.AWS\\ServerAPIs.Authentication.AWS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.AWS\\ServerAPIs.Authentication.AWS.csproj",
+        "projectName": "ServerAPIs.Authentication.AWS",
+        "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.AWS\\ServerAPIs.Authentication.AWS.csproj",
+        "packagesPath": "C:\\Users\\appeon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.AWS\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\appeon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\appeon\\.nuget\\packages\\": {},
+          "http://172.18.3.147:8099/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\ServerAPIs.Authentication.Azure.csproj": {
+                "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\ServerAPIs.Authentication.Azure.csproj"
+              },
+              "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj": {
+                "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Amazon.AspNetCore.Identity.Cognito": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\ServerAPIs.Authentication.Azure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\ServerAPIs.Authentication.Azure.csproj",
+        "projectName": "ServerAPIs.Authentication.Azure",
+        "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\ServerAPIs.Authentication.Azure.csproj",
+        "packagesPath": "C:\\Users\\appeon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Azure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\appeon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\appeon\\.nuget\\packages\\": {},
+          "http://172.18.3.147:8099/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj": {
+                "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj",
+        "projectName": "ServerAPIs.Authentication.Common",
+        "projectPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\ServerAPIs.Authentication.Common.csproj",
+        "packagesPath": "C:\\Users\\appeon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\appeon\\Desktop\\Trunk\\06_Dev\\GitHub Examples\\PowerServer-Authentication-Example\\Server\\ServerAPIs.Authentication.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\appeon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Users\\appeon\\.nuget\\packages\\": {},
+          "http://172.18.3.147:8099/nuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "IdentityModel.AspNetCore.OAuth2Introspection": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.17, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

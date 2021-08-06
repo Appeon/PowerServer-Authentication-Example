@@ -1,0 +1,96 @@
+﻿{
+  // Configuration and general rules
+  "IpRateLimiting": {
+
+    // If EnableEndpointRateLimiting is set to false then the limits will apply globally and only the rules that have as endpoint * will apply.
+    // For example, if you set a limit of 5 calls per second, any HTTP call to any endpoint will count towards that limit.
+
+    // If EnableEndpointRateLimiting is set to true, then the limits will apply for each endpoint as in {HTTP_Verb}{PATH}.
+    // For example, if you set a limit of 5 calls per second for *:/api/values a client can call GET /api/values 5 times per second but also 5 times PUT /api/values.
+    "EnableEndpointRateLimiting": true,
+
+    // If StackBlockedRequests is set to false, rejected calls are not added to the throttle counter.
+    // If a client makes 3 requests per second and you've set a limit of one call per second, other limits like per minute or per day counters will only record the first call, the one that wasn't blocked.
+    // If you want rejected requests to count towards the other limits, you'll have to set StackBlockedRequests to true.
+    "StackBlockedRequests": true,
+
+    // The RealIpHeader is used to extract the client IP when your Kestrel server is behind a reverse proxy.
+    // If your proxy uses a different header then X-Real-IP use this option to set it up.
+    "RealIpHeader": "X-Real-IP",
+
+    // The ClientIdHeader is used to extract the client id for white listing. 
+    // If a client id is present in this header and matches a value specified in ClientWhitelist then no rate limits are applied.
+    "ClientIdHeader": "X-ClientId",
+    "HttpStatusCode": 429,
+    "IpWhitelist": [ "127.0.0.1", "::1/10", "192.168.0.0/24" ],
+    //"EndpointWhitelist": [ "get:/api/license", "*:/api/status" ],
+    //"ClientWhitelist": [ "dev-id-1", "dev-id-2" ],
+    "GeneralRules": [
+      {
+        // Endpoint format is {HTTP_Verb}:{PATH}, you can target any HTTP verb by using the asterix symbol.
+        "Endpoint": "*:/health*",
+        // Period format is {INT}{PERIOD_TYPE}, you can use one of the following period types: s, m, h, d.
+        "Period": "1s",
+        // Limit format is {LONG}.
+        "Limit": 2
+      },
+      {
+        "Endpoint": "*:/health*",
+        "Period": "15m",
+        "Limit": 100
+      },
+      {
+        "Endpoint": "*:/health*",
+        "Period": "12h",
+        "Limit": 1000
+      },
+      {
+        "Endpoint": "*:/health*",
+        "Period": "7d",
+        "Limit": 10000
+      }
+    ]
+  }
+
+  // Removes the comment if you want to override general rules for specific IPs
+  //"IpRateLimitPolicies": {
+  //  "IpRules": [
+  //    {
+  //      // The IP field supports IP v4 and v6 values and ranges like "192.168.0.0/24", "fe80::/10" or "192.168.0.0-192.168.0.255".
+  //      "Ip": "84.247.85.224",
+  //      "Rules": [
+  //        {
+  //          "Endpoint": "*",
+  //          "Period": "1s",
+  //          "Limit": 10
+  //        },
+  //        {
+  //          "Endpoint": "*",
+  //          "Period": "15m",
+  //          "Limit": 200
+  //        }
+  //      ]
+  //    },
+  //    {
+  //      "Ip": "192.168.3.22/25",
+  //      "Rules": [
+  //        {
+  //          "Endpoint": "*",
+  //          "Period": "1s",
+  //          "Limit": 5
+  //        },
+  //        {
+  //          "Endpoint": "*",
+  //          "Period": "15m",
+  //          "Limit": 150
+  //        },
+  //        {
+  //          "Endpoint": "*",
+  //          "Period": "12h",
+  //          "Limit": 500
+  //        }
+  //      ]
+  //    }
+  //  ]
+  //}
+}

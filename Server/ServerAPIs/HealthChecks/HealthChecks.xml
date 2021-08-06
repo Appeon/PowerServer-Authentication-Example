@@ -1,0 +1,13 @@
+﻿<Project>
+  <ItemGroup>
+    <!-- Installs AspNetCoreRateLimit, to control the rate of requests to the health check APIs  -->
+    <PackageReference Include="AspNetCoreRateLimit" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Configures whether to always copy the health UI file to the output directory -->
+    <None Update="HealthChecks\health-ui\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

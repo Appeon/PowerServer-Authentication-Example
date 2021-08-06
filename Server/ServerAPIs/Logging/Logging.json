@@ -1,0 +1,50 @@
+﻿{
+  // PowerServer log configuration
+  // see https://docs.microsoft.com/e-us/aspnet/core/fundamentals/logging
+  "Logging": {
+    // onfigures whether to enable file server for logging
+    "EnableFileServer": false,
+
+    // Sets the default log output level of all the logging providers
+    "LogLevel": {
+
+      // Sets the default log output level
+      "Default": "Warning",
+
+      // Sets the Microsoft log output level
+      "Microsoft": "Warning",
+
+      // Sets the Microsoft.Hosting.Lifetime log output level 
+      "Microsoft.Hosting.Lifetime": "Information"
+    },
+
+    // Configures the log output of Application Insights
+    "ApplicationInsights": {
+      "LogLevel": {
+
+        //  Sets the default log output level
+        "Default": "Warning"
+      }
+    }
+  },
+  "PowerServer": {
+
+    // PowerServer debug log configuration
+    "LoggingOptions": {
+
+      // Sets whether to output SQL related logs
+      "EnableSqlLog": false,
+
+      // Sets whether to output logs related with session status changes
+      "EnableSessionLog": false,
+
+      // Sets whether to output logs related with transaction status changes
+      "EnableTransactionLog": false
+    }
+  },
+  "ApplicationInsights": {
+
+    // Configures the Application Insights key for telemetry data transfer
+    "InstrumentationKey": "<put instrumentation key here>"
+  }
+}

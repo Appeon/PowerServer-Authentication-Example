@@ -1,0 +1,41 @@
+{
+  "PowerServer:EnableAuthentication": true,
+  "IdSvr4": {
+    "ClientID": "ro.client",
+    "ClientSecret": "08692CED-944D-4DA9-BFEF-0FE503C203AC",
+    "Scope": "serverapi",
+    "Authority": "<your web api host>"
+  },
+  "Jwt": {
+    "Issuer": "issuer",
+    "Audience": "audience",
+    "SecurityKey": "LHlixbEMyPdHyezoNXaNeB7ZFEffEXO9uDYthzrBu6s=",
+    "Expires": 3600,
+    "ValidateLifetime": true
+  },
+  "AWS": {
+    "Region": "<your region>",
+    "UserPoolId": "<your UserPool Id>",
+    "UserPoolClientId": "<your UserPool clientId>",
+    "UserPoolClientSecret": "<your UserPool clientSecret>",
+    "CallbackUrl": "<your callback url>"
+  },
+  "AzureAD": {
+    "ClientID": "<your clientId>",
+    "ClientSecret": "<your clientSecret>",
+    "TokenEndpoint": "https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/token",
+    "Scope": "<your scope>",
+    "RedirectUri": "<your redirect uri>",
+    "Authority": "https://login.microsoftonline.com/<your-tenantId>"
+  },
+  "AzureB2C": {
+    "ClientID": "<your clientId>",
+    "ClientSecret": "<your clientSecret>",
+    "TokenEndpoint": "https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/token",
+    "B2CTokenEndpoint": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<policy-name>/oauth2/v2.0/token",
+    "Scope": "<your scope>",
+    "RedirectUri": "{your redirect uri}",
+    "Authority_Pwd": "https://login.microsoftonline.com/<your-tenantId>/v2.0",
+    "Authority_Code": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<policy-name>/v2.0/"
+  }
+}

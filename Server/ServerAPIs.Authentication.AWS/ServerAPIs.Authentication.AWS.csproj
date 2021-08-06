@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>../appeondemo.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Amazon.AspNetCore.Identity.Cognito" Version="3.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\ServerAPIs.Authentication.Azure\ServerAPIs.Authentication.Azure.csproj" />
+		<ProjectReference Include="..\ServerAPIs.Authentication.Common\ServerAPIs.Authentication.Common.csproj" />
+	</ItemGroup>
+</Project>

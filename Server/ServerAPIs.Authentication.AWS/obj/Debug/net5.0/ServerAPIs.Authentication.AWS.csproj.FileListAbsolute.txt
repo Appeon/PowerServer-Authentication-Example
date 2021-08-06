@@ -1,0 +1,17 @@
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.AWS.deps.json
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.AWS.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ref\ServerAPIs.Authentication.AWS.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.AWS.pdb
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.Azure.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.Common.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.Azure.pdb
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\bin\Debug\net5.0\ServerAPIs.Authentication.Common.pdb
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.csprojAssemblyReference.cache
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.AssemblyInfoInputs.cache
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.AssemblyInfo.cs
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.csproj.CoreCompileInputs.cache
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.csproj.CopyComplete
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ref\ServerAPIs.Authentication.AWS.dll
+C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs.Authentication.AWS\obj\Debug\net5.0\ServerAPIs.Authentication.AWS.pdb

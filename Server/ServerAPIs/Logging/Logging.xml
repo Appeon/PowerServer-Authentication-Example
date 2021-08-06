@@ -1,0 +1,18 @@
+﻿<Project>
+
+  <ItemGroup>
+    <!-- Installs Log4Net for logging -->
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="5.0.3" />
+    
+    <!-- Installs Azure Application Insights, so to directs the telemetry data to an Azure Application Insights Resource -->
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.17.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Always copies to the output directory -->
+    <None Update="Logging\log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

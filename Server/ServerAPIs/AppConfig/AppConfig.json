@@ -1,0 +1,18 @@
+﻿{
+  // Sets the environment type when starting PowerServer
+  // The value can be overwritten by commandline argument, environment variable or other imported configuration under the identical name
+  // see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration
+
+  // For example, in the project folder, execute: dotnet run -- --POWERSERVER_ENVIRONMENTTYPE=Development
+  // see https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-run#description
+
+  // Or, in the output directory, execute: dotnet ServerAPIs.dll --POWERSERVER_ENVIRONMENTTYPE=Development
+  // https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet#description
+  "POWERSERVER_ENVIRONMENTTYPE": "Default",
+
+  "ConnectionStrings": {
+    // Saves the  connection string of the db that saves the configuration data. Will be referenced in AppConfigExtensions.AddPowerServerAppConfig 
+    "AppConfig": "<appconfig connection string>"
+  }
+}
+
