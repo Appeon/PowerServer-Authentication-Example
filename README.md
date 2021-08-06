@@ -65,7 +65,7 @@ Download this demo application, and then:
 
 2. Add reference to  **ServerAPIs.Authentication.Common** class library. The relative path is //Server/ServerAPIs.Authentication.Common/ServerAPIs.Authentication.Common.csproj.
 
-3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs project. For example, suppose you need to use Aamaon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
+3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs project. For example, suppose you need to use Amazon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
 
 4. Edit the **AuthenticationExtensions.cs** file in **Authentication** folder in the ServerAPIs project, and add the following code inside **AddPowerServerAuthentication** method. Note that uncomment the code that is required for your authentication.
 
