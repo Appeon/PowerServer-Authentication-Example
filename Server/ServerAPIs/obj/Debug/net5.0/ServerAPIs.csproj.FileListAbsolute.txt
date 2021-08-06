@@ -1,7 +1,0 @@
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.csprojAssemblyReference.cache
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.AssemblyInfoInputs.cache
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.AssemblyInfo.cs
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.csproj.CoreCompileInputs.cache
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\appeon\Desktop\Trunk\06_Dev\GitHub Examples\PowerServer-Authentication-Example\Server\ServerAPIs\obj\Debug\net5.0\ServerAPIs.MvcApplicationPartsAssemblyInfo.cache
