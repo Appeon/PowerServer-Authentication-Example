@@ -10,8 +10,8 @@ The project is structured as follows.
 |—— PowerServer-Authentication-Example Repository 
 	|—— Client 		PowerBuilder client application that has incorporated the authentication strategies
 	|—— Server		PowerServer Web APIs solution that has incorporated the authentication stategies 
-		|—— AppModels		Stores the models and ESqls converted and exported from the PowerBuilder application(s).
-		|—— ServerAPIs		PowerServer Web API project.
+		|—— AppModels		Stores the models and ESqls converted and exported from the PowerBuilder application(s)
+		|—— ServerAPIs		PowerServer Web API project
 		|—— ServerAPIs.Authentication.AWS		Amazon Cognito authentication integration
 		|—— ServerAPIs.Authentication.Azure		Azure AD/B2C authentication integration
 		|—— ServerAPIs.Authentication.Common		Common class library
