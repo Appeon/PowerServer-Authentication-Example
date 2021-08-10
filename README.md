@@ -8,14 +8,14 @@ The project is structured as follows.
 
 ```
 |—— PowerServer-Authentication-Example Repository 
-	|—— Client 			PowerBuilder client application that has incorporated the authentication strategies
-	|—— Server			PowerServer Web APIs solution that has incorporated the authentication stategies 
+	|—— Client 		PowerBuilder client application that has incorporated the authentication strategies
+	|—— Server		PowerServer Web APIs solution that has incorporated the authentication stategies 
 		|—— AppModels		Stores the models and ESqls converted and exported from the PowerBuilder application(s)
 		|—— ServerAPIs		PowerServer Web API project
 		|—— ServerAPIs.Authentication.AWS		Amazon Cognito authentication integration
 		|—— ServerAPIs.Authentication.Azure		Azure AD/B2C authentication integration
 		|—— ServerAPIs.Authentication.Common		Common class library
-		|—— ServerAPIs.Authentication.IdentityServer4	IdentityServer4 authentication integration
+		|—— ServerAPIs.Authentication.IdentityServer4		IdentityServer4 authentication integration
 		|—— ServerAPIs.Authentication.Jwt		JWT authentication integration
 ```
 
@@ -30,21 +30,19 @@ Download this demo application, and then:
 1. Download the database file <b>pbdemo2021_for_sqlanywhere.zip</b> from [PowerBuilder-Project-Example-Database](https://github.com/Appeon/PowerBuilder-Project-Example-Database) and restore it. 
 2. Configure the ODBC data source.
 
-#### Running the Example
+#### Modifying the configuration files
 
 1. Open the PowerBuilder project in PowerBuilder 2021.
-
 2. Open the PowerServer project: ps_authentication, switch to the Web APIs tab and set the Web API URL as you need. Please note that the Web API URL must be HTTPS.
-
-3. Click the Auto Import button in the License settings to import your License.
-
+3. Click the Auto Import button in the License settings to import your license.
 4. Open Database Configuration. Set the database to the ODBC source configured in step #2 of the Preparations section.
-
 5. Open the CloudSetting.ini file in the Client folder, change the host of TokenEndpoint and UserEndpoint to the Web API URL configured in step #2, change the AuthorizeUrl of AWS and Azure according to your personal account configuration, and change Username and Password according to your account information.
+6. Build & deploy the PowerServer project. (In this example, the C# solution generated is **PowerServer_authentication.sln**.)
+7. Open **PowerServer_authentication.sln** and **PowerServer-Authentication-Example.sln**, copy the ServerAPIs/AppConfig/Applications.json and ServerAPIs/Server.json from **PowerServer_authentication.sln** to overwrite the files of same names in **PowerServer-Authentication-Example.sln** 
 
-6. Build & deploy the PowerServer project. (**Note:** The C# Solution generated in this step will not be used. This step is simply to get the PowerServer app files generated here.) 
+#### Running the Example
 
-7. Open the **PowerServer-Authentication-Example.sln** solution and fill in all the sensitive data between the angle brackets `<>` in the Authentication.json file, for example:
+1. Fill in all the sensitive data between the angle brackets `<>` in the ServerAPIs/Authentication/Authentication.json file in **PowerServer-Authentication-Example.sln**, for example:
 
    e.g.:
 
@@ -55,9 +53,9 @@ Download this demo application, and then:
    	}
    ```
 
-8. Run the ServerAPIs project. 
+2. Run the ServerAPIs project. 
 
-9. Switch to PowerBuilder 2021, right click on **ps_authentication**, and then click Run PowerServer project.
+3. Switch to PowerBuilder 2021, right click on **ps_authentication**, and then click Run PowerServer project.
 
 #### How to integrate to your ServerAPIs project
 
@@ -65,7 +63,7 @@ Download this demo application, and then:
 
 2. Add reference to  **ServerAPIs.Authentication.Common** class library. The relative path is //Server/ServerAPIs.Authentication.Common/ServerAPIs.Authentication.Common.csproj.
 
-3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs project. For example, suppose you need to use Amazon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
+3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs project. For example, suppose you need to use Aamaon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
 
 4. Edit the **AuthenticationExtensions.cs** file in **Authentication** folder in the ServerAPIs project, and add the following code inside **AddPowerServerAuthentication** method. Note that uncomment the code that is required for your authentication.
 
