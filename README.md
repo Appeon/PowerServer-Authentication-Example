@@ -15,7 +15,7 @@ The project is structured as follows.
 		|—— ServerAPIs.Authentication.AWS		Amazon Cognito authentication integration
 		|—— ServerAPIs.Authentication.Azure		Azure AD/B2C authentication integration
 		|—— ServerAPIs.Authentication.Common		Common class library
-		|—— ServerAPIs.Authentication.IdentityServer4		IdentityServer4 authentication integration
+		|—— ServerAPIs.Authentication.IdentityServer4	IdentityServer4 authentication integration
 		|—— ServerAPIs.Authentication.Jwt		JWT authentication integration
 ```
 
