@@ -10,7 +10,7 @@ namespace ServerAPIs.Authentication.Azure
 
         public string ClientSecret { get; set; } = string.Empty;
 
-        public string TokenEndpoint { get; set; } = string.Empty;
+        public string ROPCTokenEndpoint { get; set; } = string.Empty;
 
         public string B2CTokenEndpoint { get; set; } = string.Empty;
 

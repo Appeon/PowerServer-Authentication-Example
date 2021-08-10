@@ -31,11 +31,11 @@
   "AzureB2C": {
     "ClientID": "<your clientId>",
     "ClientSecret": "<your clientSecret>",
-    "TokenEndpoint": "https://login.microsoftonline.com/<your-tenantId>/oauth2/v2.0/token",
+    "ROPCTokenEndpoint": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<ropc-policy-name>/oauth2/v2.0/token",
     "B2CTokenEndpoint": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<policy-name>/oauth2/v2.0/token",
     "Scope": "<your scope>",
     "RedirectUri": "{your redirect url}",
-    "Authority_Pwd": "https://login.microsoftonline.com/<your-tenantId>/v2.0",
+    "Authority_Pwd": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<ropc-policy-name>/v2.0/",
     "Authority_Code": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<policy-name>/v2.0/"
   }
 }

@@ -25,8 +25,8 @@ namespace Microsoft.AspNetCore.Builder
 
         private readonly string _clientId;
         private readonly string _clientSecret;
-        private readonly string _tokenEndpoint;
-        private readonly string _b2cTokenEndpoint;
+        private readonly string _ropc_tokenEndpoint;
+        private readonly string _b2c_tokenEndpoint;
         private readonly string _scope;
         private readonly string _redirectUri;
 
@@ -34,8 +34,8 @@ namespace Microsoft.AspNetCore.Builder
         {
             _clientId = opts.CurrentValue.ClientID;
             _clientSecret = opts.CurrentValue.ClientSecret;
-            _tokenEndpoint = opts.CurrentValue.TokenEndpoint;
-            _b2cTokenEndpoint = opts.CurrentValue.B2CTokenEndpoint;
+            _ropc_tokenEndpoint = opts.CurrentValue.ROPCTokenEndpoint;
+            _b2c_tokenEndpoint = opts.CurrentValue.B2CTokenEndpoint;
             _scope = opts.CurrentValue.Scope;
             _redirectUri = opts.CurrentValue.RedirectUri;
 
@@ -64,9 +64,16 @@ namespace Microsoft.AspNetCore.Builder
             var body = await streamReader.ReadToEndAsync();
             var login = JsonConvert.DeserializeObject<TokenRequest>(body, new JsonSerializerSettings() { }) ?? new TokenRequest();
 
-            var content = UrlEncodedContentBuilder.BuildEncodedContent(GrantType.Password, login.Username, login.Password, _scope);
+            var parms = new Dictionary<string, string>()
+            {
+                { "grant_type", "password" },
+                { "client_id", _clientId },
+                { "username", login.Username },
+                { "password", login.Password },
+                { "scope", _scope }
+            };
 
-            var response = await _httpClient.PostAsync(_tokenEndpoint, content);
+            var response = await _httpClient.PostAsync(_ropc_tokenEndpoint, new FormUrlEncodedContent(parms));
             var jsonObj = JObject.Parse(await response.Content.ReadAsStringAsync());
 
             context.Response.ContentType = MediaTypeNames.Application.Json;
@@ -121,7 +128,7 @@ namespace Microsoft.AspNetCore.Builder
                 { "scope", _scope }
             };
 
-            var response = await _httpClient.PostAsync(_b2cTokenEndpoint, new FormUrlEncodedContent(parms));
+            var response = await _httpClient.PostAsync(_b2c_tokenEndpoint, new FormUrlEncodedContent(parms));
             var result = await response.Content.ReadAsStringAsync();
 
             var dynamicObj = JObject.Parse(result);

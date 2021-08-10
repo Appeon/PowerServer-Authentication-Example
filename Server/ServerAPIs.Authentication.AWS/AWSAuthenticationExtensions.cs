@@ -15,7 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddSingleton<CognitoTokenManager>();
 
             services.AddAuthentication()
-                .AddJwtBearer("AWSCognito", options =>
+                .AddJwtBearer("AmazonCognito", options =>
                 {
                     var region = configuration["AWS:Region"];
                     var poolID = configuration["AWS:UserPoolId"];
