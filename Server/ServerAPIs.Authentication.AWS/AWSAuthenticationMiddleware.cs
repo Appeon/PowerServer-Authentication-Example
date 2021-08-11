@@ -24,7 +24,7 @@ namespace Microsoft.AspNetCore.Builder
                 {
                     endpoints.MapPost("/aws/token", TokenEndpointAsync);        // TokenEndpoint
                     endpoints.MapGet("/aws/callback", CallbackEndpointAsync);   // CallbackUrl
-                    endpoints.MapPost("/aws/user/{id}", UserEndpointAsync);     // UserEndpoint
+                    endpoints.MapPost("/aws/user", UserEndpointAsync);          // UserEndpoint
                 });
             };
         }
@@ -78,7 +78,13 @@ namespace Microsoft.AspNetCore.Builder
         {
             var tokenManager = context.RequestServices.GetRequiredService<CognitoTokenManager>();
 
-            var id = context.Request.Path.Value[10..];
+            using var streamReader = new StreamReader(context.Request.Body);
+            var content = await streamReader.ReadToEndAsync();
+            var request = JsonConvert.DeserializeObject<UserRequest>(content, new JsonSerializerSettings() { }) ?? new UserRequest();
+
+            var ciphertext = request.Content;
+
+            var id = AesUtilities.Decrypt(ciphertext);
 
             var token = tokenManager.Tokens[id];
 

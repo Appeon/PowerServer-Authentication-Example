@@ -37,5 +37,9 @@
     "RedirectUri": "{your redirect url}",
     "Authority_Pwd": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<ropc-policy-name>/v2.0/",
     "Authority_Code": "https://<your domain>.b2clogin.com/<your domain>.onmicrosoft.com/<policy-name>/v2.0/"
+  },
+  "AES": {
+    "PrivateKey": "bSEFK4fEI8Y8hpjyi2MZK1Z8KTe2NU3d",
+    "Vector": "PowerServer-Authentication-Example"
   }
 }

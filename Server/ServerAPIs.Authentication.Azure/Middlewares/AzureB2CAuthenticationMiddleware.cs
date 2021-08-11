@@ -53,7 +53,7 @@ namespace Microsoft.AspNetCore.Builder
                 {
                     endpoints.MapPost("/azureb2c/token", TokenEndpointAsync);       // TokenEndpoint
                     endpoints.MapGet("/azureb2c/callback", CallbackEndpointAsync);  // CallbackUrl
-                    endpoints.MapPost("/azureb2c/user/{id}", UserEndpointAsync);    // UserEndpoint
+                    endpoints.MapPost("/azureb2c/user", UserEndpointAsync);         // UserEndpoint
                 });
             };
         }
@@ -109,7 +109,13 @@ namespace Microsoft.AspNetCore.Builder
         {
             var tokenManager = context.RequestServices.GetRequiredService<AzureB2CTokenManager>();
 
-            var id = context.Request.Path.Value[15..];
+            using var streamReader = new StreamReader(context.Request.Body);
+            var content = await streamReader.ReadToEndAsync();
+            var request = JsonConvert.DeserializeObject<UserRequest>(content, new JsonSerializerSettings() { }) ?? new UserRequest();
+
+            var ciphertext = request.Content;
+
+            var id = AesUtilities.Decrypt(ciphertext);
 
             var token = tokenManager.Tokens[id];
 

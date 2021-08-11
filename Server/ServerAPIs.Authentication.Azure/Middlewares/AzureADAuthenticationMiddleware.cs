@@ -51,7 +51,7 @@ namespace Microsoft.AspNetCore.Builder
                 {
                     endpoints.MapPost("/azuread/token", TokenEndpointAsync);        // TokenEndpoint
                     endpoints.MapGet("/azuread/callback", CallbackEndpointAsync);   // CallbackUrl
-                    endpoints.MapPost("/azuread/user/{id}", UserEndpointAsync);     // UserEndpoint
+                    endpoints.MapPost("/azuread/user", UserEndpointAsync);          // UserEndpoint
                 });
             };
         }
@@ -100,7 +100,13 @@ namespace Microsoft.AspNetCore.Builder
         {
             var tokenManager = context.RequestServices.GetRequiredService<AzureADTokenManager>();
 
-            var id = context.Request.Path.Value[14..];
+            using var streamReader = new StreamReader(context.Request.Body);
+            var content = await streamReader.ReadToEndAsync();
+            var request = JsonConvert.DeserializeObject<UserRequest>(content, new JsonSerializerSettings() { }) ?? new UserRequest();
+
+            var ciphertext = request.Content;
+
+            var id = AesUtilities.Decrypt(ciphertext);
 
             var token = tokenManager.Tokens[id];
 

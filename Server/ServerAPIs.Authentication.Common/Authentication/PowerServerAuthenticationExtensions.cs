@@ -1,4 +1,5 @@
-﻿using ServerAPIs.Authentication.Common;
+﻿using Microsoft.Extensions.Configuration;
+using ServerAPIs.Authentication.Common;
 using System.Net;
 using System.Net.Http;
 
@@ -6,7 +7,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class PowerServerAuthenticationExtensions
     {
-        public static IServiceCollection AddAuthenticationPlatform(this IServiceCollection services)
+        public static IServiceCollection AddAuthenticationPlatform(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddHttpClient<TokenClient>().ConfigurePrimaryHttpMessageHandler(provider =>
             {
@@ -22,6 +23,8 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 opts.DefaultAuthenticateScheme = "Default";
             }).AddScheme<DefaultAuthenticationOptions, DefaultAuthenticationHandlerPlatform>("Default", opts => { });
+
+            services.AddSingleton(new AesUtilities(configuration));
 
             return services;
         }

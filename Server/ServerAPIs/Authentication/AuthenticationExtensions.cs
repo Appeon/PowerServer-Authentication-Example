@@ -10,7 +10,7 @@ namespace ServerAPIs
         public static IServiceCollection AddPowerServerAuthentication(
             this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAuthenticationPlatform();
+            services.AddAuthenticationPlatform(configuration);
 
             // The following five authentication services are registered（IdentityServer4、IdentityModel JWT、AWS Cognito、Azure AD、Azure B2C）
             services.AddIdSvr4(configuration);
