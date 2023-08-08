@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserExtensions</name>
+    </assembly>
+    <members>
+        <member name="T:ServerAPIs.UserExtensions">
+            <summary>
+            Adds extension services in this file.
+            </summary>
+        </member>
+    </members>
+</doc>

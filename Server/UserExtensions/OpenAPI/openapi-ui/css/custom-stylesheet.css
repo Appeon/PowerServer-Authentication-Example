@@ -1,0 +1,64 @@
+﻿.swagger-ui .topbar {
+    background-color: #0094ff;    
+}
+
+.swagger-ui .topbar .download-url-wrapper .select-label select {
+    border-color: #EF1C25;
+}
+
+.topbar-wrapper img[alt="Swagger UI"], .topbar-wrapper span {
+    visibility: hidden;
+}
+
+.swagger-ui .topbar .topbar-wrapper, .swagger-ui .topbar a {
+    background: transparent url(../logo.svg) no-repeat left center;
+}
+
+.topbar-wrapper .link:after {
+    color: #EF1C25;
+    visibility: visible;
+    display: block;
+    position: absolute;
+    padding: 15px;
+}
+
+.swagger-ui .info .title small:last-child {
+    background-color: #EF1C25 !important;
+}
+
+.swagger-ui .info .title span {
+    visibility: hidden !important;
+}
+
+.swagger-ui .info {
+    margin: 10px 0 !important;
+}
+
+.swagger-ui .topbar .download-url-wrapper {
+    visibility: hidden;
+}
+
+.swagger-ui .auth-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin: -40px 0 0 0;
+    position: relative;
+    top: -20px;
+}
+
+.swagger-ui .scheme-container .schemes div::before {
+    background-color: rgb(250,250,250);
+    margin: 5px 10px;
+}
+
+.swagger-ui .scheme-container {
+    margin: 0 0 0px;
+    padding: 15px 0;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.15);
+}
+
+.swagger-ui .float-right{
+    display: none;
+}

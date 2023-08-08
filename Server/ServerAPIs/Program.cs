@@ -1,10 +1,14 @@
+﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using System;
+using UserExtensions;
 
 namespace ServerAPIs
 {
+    /// <summary>
+    /// Do NOT modify this file. Otherwise, unexpected upgrade issues may occur.
+    /// </summary>
     public class Program
     {
         public static void Main(string[] args)

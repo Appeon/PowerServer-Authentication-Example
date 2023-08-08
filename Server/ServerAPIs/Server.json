@@ -1,82 +1,23 @@
 {
-  "AllowedHosts": "*",
+  //Do NOT modify this file. Otherwise, unexpected upgrade issues may occur.
 
-  // PowerServer server configuration
-  "PowerServer": {
-    "LicenseKey": "",
-    "LicenseCode": "",
+  "PathBase": null,
 
-    // Whether to have the sensitive data encrypted when transferring it from the configuration APIs to PowerServer
-    // If false, the sensitive data is not encrypted, then PowerServer will encrypt the data
-    // If true (recommended), the sensitive data is already encrypted, then PowerServer will not encrypt it
-    "EncryptedSensitiveData": false,
+  // Sets the AppModels assembly name
+  // Updates the value here if ESql and Models exist in multiple projects, or the AppModels project is renamed
+  "AppModelsAssemblyNames": [ "AppModels.dll" ],
 
-    // Sets the AppModels assembly name
-    // Updates the value here if ESql and Models exist in multiple projects, or the AppModels project is renamed
-    "AppModelsAssemblyNames": [ "AppModels.dll" ],
+  //Identifies the templates from different versions
+  "TemplateID": "86534347-3E3E-4585-BEFE-6CB1827545C8",
 
-    // Sets HTTP proxy for connection with the license server
-    "ProxyOptions": {
-
-      // Sets the proxy server
-      "Server": "",
-
-      // Sets the proxy server user name
-      "Username": "",
-
-      // Sets the proxy server password
-      "Password": ""
-    },
-
-    // Sets the email server 
-    "EmailOptions": {
-
-      // Sets the email server address
-      "SmtpServerAddress": "",
-
-      // Sets the email server port
-      "SmtpServerPort": 25,
-
-      // Sets whether to enable SSL
-      "SmtpServerSsl": false,
-
-      // Sets the email sender's account
-      "SenderAccount": "",
-
-      // Sets the email sender's account password
-      "SenderPassword": "",
-
-      // Sets the email sender's display name
-      "SenderDisplayName": "",
-
-      // Sets the recipient(s)
-      "Recipients": [ "" ]
-    },
-
-    // Sets the statistics options
-    "StatisticsOptions": {
-
-      // Sets whether to track the request details
-      "TrackRequestDetails": false,
-
-      // Sets whether to track the transaction details
-      "TrackTransactionDetails": false,
-
-      // Sets whether to track the failed request details
-      "TrackFailedRequestDetails": true,
-
-      // Sets whether to track the failed transaction details
-      "TrackFailedTransactionDetails": true,
-
-      // Sets the maximum number of requests to be recorded
-      "CountOfRequestDetailsToKeep": 1000,
-
-      // Sets the maximum number of transactions to be recorded
-      "CountOfTransactionDetailsToKeep": 500,
-
-      // Sets the maximum number of failed transactions to be recorded
-      "CountOfFailedTransactionDetailsToKeep": 100
-    }
+  //PowerBuilder version info
+  "VersionInfo": {
+    "Version": "2022",
+    "Revision": "R2",
+    "Build": "2819"
   }
 }
+
+
+
 

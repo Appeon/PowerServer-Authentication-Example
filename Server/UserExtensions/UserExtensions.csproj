@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="PowerServer.Core" Version="2.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="AppConfig\AppConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AppConfig\AppConfig.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="AppConfig\Applications.*.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AppConfig\Applications.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Authentication\Authentication.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Authentication\Authentication.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\lib\axios.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\lib\axios.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\lib\calibri-regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\lib\icono.min.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\health-ui\lib\vue.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\HealthChecks.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="HealthChecks\HealthChecks.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="Logging\log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Logging\Logging.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Logging\Logging.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Logging\Logging.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="OpenAPI\openapi-ui\css\custom-stylesheet.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="OpenAPI\openapi-ui\favicon-16x16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="OpenAPI\openapi-ui\favicon-32x32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="OpenAPI\openapi-ui\lib\custom-javascript.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="OpenAPI\openapi-ui\logo.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </None>
+    <None Update="OpenAPI\OpenAPI.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="OpenAPI\OpenAPI.xml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="OpenAPI\Swagger.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserConfig.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UserConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ServerAPIs.Authentication.AWS\ServerAPIs.Authentication.AWS.csproj" />
+    <ProjectReference Include="..\ServerAPIs.Authentication.Azure\ServerAPIs.Authentication.Azure.csproj" />
+    <ProjectReference Include="..\ServerAPIs.Authentication.Common\ServerAPIs.Authentication.Common.csproj" />
+    <ProjectReference Include="..\ServerAPIs.Authentication.IdentityServer4\ServerAPIs.Authentication.IdentityServer4.csproj" />
+    <ProjectReference Include="..\ServerAPIs.Authentication.Jwt\ServerAPIs.Authentication.Jwt.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildProjectDirectory)\Logging\Logging.xml" Condition="Exists('$(MSBuildProjectDirectory)\Logging\Logging.xml')" />
+  <Import Project="$(MSBuildProjectDirectory)\OpenAPI\OpenAPI.xml" Condition="Exists('$(MSBuildProjectDirectory)\OpenAPI\OpenAPI.xml')" />
+  <Import Project="$(MSBuildProjectDirectory)\HealthChecks\HealthChecks.xml" Condition="Exists('$(MSBuildProjectDirectory)\HealthChecks\HealthChecks.xml')" />
+  <Import Project="$(MSBuildProjectDirectory)\Authentication\Authentication.xml" Condition="Exists('$(MSBuildProjectDirectory)\Authentication\Authentication.xml')" />
+</Project>

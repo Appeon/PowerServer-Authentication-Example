@@ -1,0 +1,18 @@
+﻿<Project>
+  <PropertyGroup>
+
+    <!-- Sets the environment type used for publishing PowerServer Web APIs-->
+    <!-- The default value is empty, meaning that all the configuration files will be deployed -->
+    <!-- To only deploy selected configuration, specify the corresponding environment type  -->
+    <!-- The Applications.json maps to the default environment type. -->
+    <!-- For other environment type, the  type name is added between the "Application" and ".json" in the file name -->
+
+    <!-- The value may be overwritten by the MSBuild property under the identical name -->
+    <!-- see https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-properties -->
+
+    <!-- For example, in the project folder, execute: dotnet publish -c Release -p:POWERSERVER_ENVIRONMENTTYPE=Development -->
+    <!-- see https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-publish#msbuild -->
+    <POWERSERVER_ENVIRONMENTTYPE></POWERSERVER_ENVIRONMENTTYPE>
+
+  </PropertyGroup>
+</Project>

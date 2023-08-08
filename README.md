@@ -17,6 +17,7 @@ The project is structured as follows.
 		|—— ServerAPIs.Authentication.Common		Common class library
 		|—— ServerAPIs.Authentication.IdentityServer4		IdentityServer4 authentication integration
 		|—— ServerAPIs.Authentication.Jwt		JWT authentication integration
+                |—— UserExtensions 	User Extension Project
 ```
 
 ### Setting Up the Project
@@ -32,7 +33,7 @@ Download this demo application, and then:
 
 #### Build & deploy the PowerServer project
 
-1. Open the PowerBuilder project in PowerBuilder 2022.
+1. Open the PowerBuilder project in PowerBuilder 2022 R2.
 2. Open the PowerServer project: ps_authentication, switch to the Web APIs tab and set the Web API URL as you need. Please note that the Web API URL must be HTTPS.
 3. Click the Auto Import button in the License settings to import your license.
 4. Open Database Configuration. Set the database to the ODBC source configured in step #2 of the Preparations section.
@@ -41,11 +42,11 @@ Download this demo application, and then:
 
 #### Modifying the configuration files in **PowerServer-Authentication-Example.sln**
 
-1. Copy the ServerAPIs/AppConfig/Applications.json from **PowerServer_authentication.sln** generated in the section above and replace the files of same names in **PowerServer-Authentication-Example.sln.** 
+1. Copy the UserExtensions/AppConfig/Applications.json from **PowerServer_authentication.sln** generated in the section above and replace the files of same names in **PowerServer-Authentication-Example.sln.** 
 
-2. Copy the  ServerAPIs/Server.json from **PowerServer_authentication.sln** generated in the section above and replace the files of same names in **PowerServer-Authentication-Example.sln**. 
+2. Copy the UserExtensions/UserConfig.json from **PowerServer_authentication.sln** generated in the section above and replace the files of same names in **PowerServer-Authentication-Example.sln**. 
 
-3. Fill in all the sensitive data between the angle brackets `<>` in the ServerAPIs/Authentication/Authentication.json file in **PowerServer-Authentication-Example.sln**, for example:
+3. Fill in all the sensitive data between the angle brackets `<>` in the UserExtensions/Authentication/Authentication.json file in **PowerServer-Authentication-Example.sln**, for example:
 
    e.g.:
 
@@ -58,18 +59,19 @@ Download this demo application, and then:
 
 #### Running the Example
 
-1. Run the ServerAPIs project. 
-2. Switch to PowerBuilder 2022, right click on **ps_authentication**, and then click Run PowerServer project.
+1. Switch to PowerBuilder 2022 R2, right click on **ps_authentication**, and then click Run PowerServer project.
 
 #### How to integrate to your ServerAPIs project
 
 1. Open your PowerServer ServerAPIs project.
 
+2. Switch to UserExtensions project.
+
 2. Add reference to  **ServerAPIs.Authentication.Common** class library. The relative path is //Server/ServerAPIs.Authentication.Common/ServerAPIs.Authentication.Common.csproj.
 
-3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your ServerAPIs project. For example, suppose you need to use Aamaon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
+3. Add references to the library of the authentication that you need to use (they are integrated in **PowerServer-Authentication-Example.sln**) in your UserExtensions project. For example, suppose you need to use Aamaon Cognito authentication, you will need to add reference to **ServerAPIs.Authentication.AWS** project.
 
-4. Edit the **AuthenticationExtensions.cs** file in **Authentication** folder in the ServerAPIs project, and add the following code inside **AddPowerServerAuthentication** method. Note that uncomment the code that is required for your authentication.
+4. Edit the **AuthenticationExtensions.cs** file in **Authentication** folder in the UserExtensions project, and add the following code inside **AddPowerServerAuthentication** method. Note that uncomment the code that is required for your authentication.
 
    ```c#
    // Authentication platform service to supporting multiple identity authentication

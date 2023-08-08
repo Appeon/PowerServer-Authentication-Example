@@ -1,0 +1,38 @@
+{
+  "Applications": {
+    "PSRESTAuthentication": {
+      "CloudTransactions": {
+        "SQLCA": {
+          "CacheName": "address"
+        }
+      },
+      "Transaction": {
+        "Timeout": 120,
+        "TransactionException": true
+      },
+      "Session": {
+        "Timeout": 3600
+      },
+      "Request": {
+        "Timeout": 3600
+      },
+      "RunMode": 0,
+      "MaxSPCache": 50
+    }
+  },
+  "Connections": {
+    "Default": {
+      "address": {
+        "ConnectionType": "Odbc",
+        "OdbcName": "PB Demo DB V2022R2",
+        "OdbcDriver": "SqlAnywhere",
+        "UserID": "dba",
+        "Password": "eyJQYXlsb2FkIjoiNHJcdTAwMkJvb2ZYdW04SjlIMXNLb1Q3dmFBPT0iLCJUaW1lc3RhbXAiOjE2OTEzOTc5MTcsIlNpZ25hdHVyZSI6IlBDMWJTbjZUcHZTRERcdTAwMkJwRUJlVm9XZzhLN1FhUnA3R1NGUzcxUkpaNkFtYjEvMEp4d2s0cndhUGNwNlQ3NWRNME1sU2dSajFoM1JcdTAwMkI2ZnNTXHUwMDJCa2hNTDZnPT0ifQ==",
+        "CommandTimeout": 30,
+        "SecurityOptions": null,
+        "OtherOptions": null,
+        "DynamicConnection": false
+      }
+    }
+  }
+}

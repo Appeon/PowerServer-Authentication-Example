@@ -1,4 +1,4 @@
-﻿{
+{
   "profiles": {
 
     // Configures the configuration settings to be used when starting PowerServer Web APIs from SnapDevelop
@@ -9,7 +9,7 @@
       "launchBrowser": true,
 
       // Sets the launch URL
-      "launchUrl": "swagger",
+      "launchUrl": "PowerServer",
 
       // Sets the environment type of PowerServer
       "environmentVariables": {
@@ -17,7 +17,8 @@
       },
 
       // Sets the address to monitor by PowerServer at startup
-      "applicationUrl": "https://localhost:4000"
+      "applicationUrl": "https://localhost:4000/"
     }
   }
 }
+
