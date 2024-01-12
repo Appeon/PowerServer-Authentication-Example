@@ -4,7 +4,7 @@
         <name>UserExtensions</name>
     </assembly>
     <members>
-        <member name="T:ServerAPIs.UserExtensions">
+        <member name="T:UserExtensions.UserStartup">
             <summary>
             Adds extension services in this file.
             </summary>

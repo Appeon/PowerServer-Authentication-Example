@@ -6,6 +6,7 @@ using ServerAPIs.Authentication.AWS;
 using ServerAPIs.Authentication.Common;
 using System;
 using System.IO;
+using System.Linq;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
@@ -84,7 +85,9 @@ namespace Microsoft.AspNetCore.Builder
 
             var ciphertext = request.Content;
 
-            var id = AesUtilities.Decrypt(ciphertext);
+            var strCode = AesUtilities.Decrypt(ciphertext);
+
+            var id = tokenManager.AuthorizationCodes.FirstOrDefault(x => x.Value == strCode).Key;
 
             var token = tokenManager.Tokens[id];
 
