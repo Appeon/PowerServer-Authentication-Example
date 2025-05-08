@@ -33,7 +33,7 @@ Download this demo application, and then:
 
 #### Build & deploy the PowerServer project
 
-1. Open the PowerBuilder project in PowerBuilder 2022 R3.
+1. Open the PowerBuilder project in PowerBuilder 2025.
 2. Open the PowerServer project: ps_authentication, switch to the Web APIs tab and set the Web API URL as you need. Please note that the Web API URL must be HTTPS.
 3. Click the Auto Import button in the License settings to import your license.
 4. Open Database Configuration. Set the database to the ODBC source configured in step #2 of the Preparations section.
@@ -59,7 +59,7 @@ Download this demo application, and then:
 
 #### Running the Example
 
-1. Switch to PowerBuilder 2022 R3, right click on **ps_authentication**, and then click Run PowerServer project.
+1. Switch to PowerBuilder 2025, right click on **ps_authentication**, and then click Run PowerServer project.
 
 #### How to integrate to your ServerAPIs project
 

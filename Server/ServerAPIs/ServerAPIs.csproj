@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="PowerServer.Api" Version="2.2.0" />
-    <PackageReference Include="SnapObjects.Data.Odbc" Version="4.2.0" />
+    <PackageReference Include="PowerServer.Api" Version="3.0.0" />
+    <PackageReference Include="SnapObjects.Data.Odbc" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppModels\AppModels.csproj" />
